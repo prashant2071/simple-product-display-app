@@ -1,0 +1,16 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 15px,0;
+
+}
+.pagination>span{
+    padding: 15px 20px;
+    border: 1px solid;
+    cursor: pointer;
+
+}
+.paginationSelected{
+background-color: #cec1c1;
+}
