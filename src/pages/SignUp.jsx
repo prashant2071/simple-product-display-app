@@ -3,18 +3,18 @@ import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { SERVER_URL } from "../config/environmentConfig";
 
 const SignUp = () => {
   const navigate = useNavigate("");
   const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleRoute = () => {
-    navigate("/signin");
-  };
+
   const handleRegister=async () =>{
     try{
-      const response = await axios.post("http://localhost:8085/users/register",{
+      
+      const response = await axios.post(`${SERVER_URL}/users/register`,{
         fullName,
         email,
         password

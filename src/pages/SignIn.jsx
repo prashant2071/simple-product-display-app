@@ -3,6 +3,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { SERVER_URL } from "../config/environmentConfig";
 
 
 const signIn = () => {
@@ -11,7 +12,7 @@ const signIn = () => {
   const navigate = useNavigate();
   const loginHandler =async () =>{
     try{
-      const response = await axios.post("http://localhost:8085/users/login",{
+      const response = await axios.post(`${SERVER_URL}/users/login`,{
         email,
         password
       })
